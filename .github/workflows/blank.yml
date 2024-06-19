@@ -40,6 +40,8 @@ jobs:
           echo "esto es el valor de username: ${{env.username}}"
           echo "esto es el valor de password: ${{env.password}}"
 
+          echo "Project version ${{vars.PROJECT_VERSION}}"
+
       - name: "Mostrando valores solo si el usuario es el correcto"
         if: ${{env.username == github.actor}}
         run: |
