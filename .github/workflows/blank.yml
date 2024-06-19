@@ -31,7 +31,7 @@ jobs:
         run: echo "hola mundo"
       
       - name: "Mostrando valores de entorno"
-        if: ${{env.platform == 'aws' }}
+        if: ${{env.platform == 'gcp' }}
         run: |
           echo "esto es el valor de platform: ${{env.platform}}"
           echo "esto es el valor de region: ${{env.region}}"
