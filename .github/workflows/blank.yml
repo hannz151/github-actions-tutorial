@@ -37,8 +37,14 @@ jobs:
           echo "esto es el valor de region: ${{env.region}}"
           echo "esto es el valor de account: ${{env.account}}"
 
-          echo "esto es el valor de account: ${{env.username}}"
-          echo "esto es el valor de account: ${{env.password}}"
+          echo "esto es el valor de username: ${{env.username}}"
+          echo "esto es el valor de password: ${{env.password}}"
+
+      - name: "Mostrando valores solo si el usuario es el correcto"
+        if: ${{env.username == github.actor}}
+        run: |
+          echo "usuario correcto"
+
 
       - name: "Mostrando variables por defecto de github"
         run: |
